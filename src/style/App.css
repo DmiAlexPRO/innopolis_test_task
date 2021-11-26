@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;    
+}
+
+.app-header a{
+  font-size: 1.4em;
+  font-weight: 600;
+  color:#676868;
+  text-decoration: none;
+} 
+
+p{
+  font-family: sans-serif;
+  font-size: 17px;
+  line-height: 1.6em;
+  letter-spacing: 1sp;
+}
+
+.app-header a:hover{
+  color:#242323;
+}
+
+.app-header ul{
+  padding-left: 10px !important;
+}
+
+.app-header li{
+  margin-right: 17px !important;
+}
+
+.main-p-container h2{
+  font-family: 'Roboto', sans-serif;
+  font-size: 3em;
+  color:#676868;
+  margin-bottom: 0.3em;
+  margin-top: 0.5em;
+  font-weight: 400 !important;
+}
+
+.app-header-logo{
+  margin-top: 5px ;
+}
+
+.no-link{
+  text-decoration: none;
+  color:#64748B
+}
+
+.button-link{
+  padding-left: 0px;
+}
+
+.beer-img{
+  object-fit:fill !important;
+}
+
+.beer-img img{
+  object-fit:contain !important;
+  width: 100%;
+  border-radius: 4px ;
+}
+
+.beer-card{
+  display: flex;
+  justify-content: center !important;
+  overflow:visible !important;
+}
+
+.beer-fab{
+  justify-content: center !important;
+  position: relative;
+  z-index: 100;
+  border: none !important;
+  font-size: 1em !important;
+
+  transform: translateY(23px);
+  -o-transform:translateY(23px) ;
+  -ms-transform: translateY(23px);
+  -webkit-transform: translateY(23px);
+
+  box-shadow: 0px 4px 1px -2px rgb(0 0 0 / 10%),
+    0px 3px 1px 0px rgb(0 0 0 / 24%),
+    0px 1px 3px 0px rgb(0 0 0 / 22%) !important;
+}
+
+.beer-fab *{
+  font-size: 1.1em !important;
+}
+
+.beer-card h2{
+  color: #656565 !important;
+}
