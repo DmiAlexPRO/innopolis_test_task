@@ -1,20 +1,21 @@
 import { Link } from "react-router-dom";
 import AppHeader from "./AppHeader";
 import { Outlet } from "react-router";
+import React from "react";
 
-function Layout(){
+const Layout: React.FC = () =>  {
     const menuItems = [
         {
             label: 'Main',
-            template: (item,options)=>{
+            template: (item: any) => {
                 return(
-                    <Link class to='/'>{item.label}</Link>
+                    <Link to='/'>{item.label}</Link>
                 );
             }   
         },
         {
             label: 'About me',
-            template: (item,options)=>{
+            template: (item: any)=>{
                 return(
                     <Link to='/aboutme'>{item.label}</Link>
                 );
@@ -22,7 +23,7 @@ function Layout(){
         },
     ];
 
-    return(
+    return (
         <>  
             <AppHeader menuItems={menuItems}/>  
             <Outlet/> 
