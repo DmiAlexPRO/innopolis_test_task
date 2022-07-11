@@ -7,10 +7,11 @@ import {useLocation} from 'react-router-dom';
 import { useState } from 'react';
 import DataService from '../services/DataService';
 import { Image } from 'primereact/image';
+import { BeerType } from '../types';
 
-function BeerPage(props){
+const BeerPage: React.FC = () => {
     const location = useLocation();
-    const [beerBrand, setBeerBrand] = useState(function(){
+    const [beerBrand, setBeerBrand] = useState<BeerType>(function(){
         const id = Number(location.pathname.split('/').pop());
         const beerBrand = DataService.getBeerBrands().filter((p) => p.id === id)[0];
         beerBrand.isFavorite = DataService.getFavorites().has(beerBrand.id);
@@ -59,7 +60,7 @@ function BeerPage(props){
                 </div>
 
                 <div className='p-p-3 p-col-12 p-lg-6 beer-img'>
-                    <Image src={beerBrand.image_url}
+                    <Image src={beerBrand.imageUrl}
                     alt="Beer photo" className='' /> 
                 </div>
                 {button}

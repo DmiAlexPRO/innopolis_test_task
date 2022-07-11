@@ -6,12 +6,16 @@ import { Button } from 'primereact/button';
 import DataService from '../services/DataService';
 import { Link } from 'react-router-dom';
 
-export const DataTableCustom = (props) => {
+type DataCustomTablePropType = {
+    tableRows: any[]
+};
+
+export const DataTableCustom: React.FC<DataCustomTablePropType> = ({tableRows}) => {
     const [favorites, setFavorites] = useState(DataService.getFavorites())
 
-    const mapRows = function(){
-        const rows = props.rows.slice(0);
-        return rows.map((elem) => {
+    const mapRows = () => {
+        const rows = tableRows.slice(0);
+        return rows.map((elem: any) => {
             elem.isFavorite = favorites.has(elem.id)
             return (elem);
         })
@@ -20,13 +24,13 @@ export const DataTableCustom = (props) => {
     const [rows, setRows] = useState(mapRows);
     const [first, setFirst] = useState(0);
     
-    const strToBool = function(str){
+    const strToBool = (str: string) => {
         if(str === 'true')
             return true;
         return false;
     }
 
-    const clickHandler = function(rowData){
+    const clickHandler = (rowData: any) => {
         
         const id = Number(rowData.currentTarget.dataset.id);
         const isFavorite = strToBool(rowData.currentTarget.dataset.isfavorite);
@@ -42,12 +46,12 @@ export const DataTableCustom = (props) => {
             DataService.setFavorites(obdatedFavorites);
         }
         const updatedRows = rows.slice(0);
-        updatedRows.filter(p => p.id === id)[0].isFavorite = !isFavorite;
+        updatedRows.filter((p: any) => p.id === id)[0].isFavorite = !isFavorite;
         setRows(updatedRows);
             
     }
 
-    const actionBodyTemplate =  function(rowData) {
+    const actionBodyTemplate =  (rowData: any) => {
         if(rowData.isFavorite)
             return (
                 <React.Fragment>
@@ -68,7 +72,7 @@ export const DataTableCustom = (props) => {
             );
     }
 
-    const linkBodyTemplate =  function(rowData) {
+    const linkBodyTemplate = (rowData: any) => {
         const link = '/about/' + rowData.id;
         return (
             <React.Fragment>
@@ -81,7 +85,7 @@ export const DataTableCustom = (props) => {
         );  
     }
 
-    const descriptionBodyTemplate =  function(rowData) {
+    const descriptionBodyTemplate = (rowData: any) => {
         return rowData.description.slice(0,30) + '...'; 
     }
 

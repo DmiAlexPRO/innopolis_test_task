@@ -1,11 +1,8 @@
 import { Container } from "@mui/material";
 import Link from '@mui/material/Link';
 
-
-
-function Aboutme(){
+const Aboutme: React.FC = () => {
     
-
     return(
         <Container className="p-grid">
             <p>
