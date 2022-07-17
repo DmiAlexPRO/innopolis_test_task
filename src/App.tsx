@@ -3,7 +3,7 @@ import Aboutme from './components/Aboutme';
 import MainPage from './components/MainPage';
 import BeerPage from './components/BeerPage';
 import {Routes, Route } from 'react-router';
-import './style/App.css';
+import './style/App.scss';
 
 function App() {
   return (
