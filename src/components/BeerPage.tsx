@@ -1,13 +1,12 @@
 import 'primeflex/primeflex.css';
-import Container from '@mui/material/Container';
 import { Button } from 'primereact/button';
-import { Card } from '@mui/material';
 import { Link } from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
 import { useState } from 'react';
 import DataService from '../services/DataService';
 import { Image } from 'primereact/image';
 import { BeerType } from '../types';
+import {Card} from "primereact/card";
 
 const BeerPage: React.FC = () => {
     const location = useLocation();
@@ -47,7 +46,7 @@ const BeerPage: React.FC = () => {
 
 
     return(
-        <Container className="">
+        <div className="container">
             <Card className=" p-grid p-mt-3 beer-card">
                 <div className='p-p-3 p-col-12 p-lg-6'>
                     <Link to='/' className='no-link'>
@@ -65,7 +64,7 @@ const BeerPage: React.FC = () => {
                 </div>
                 {button}
             </Card>
-        </Container>
+        </div>
     );
 }
 

@@ -175,24 +175,25 @@ const data: BeerType[] = [
          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi fugiat voluptatibus totam, earum quae excepturi,
          repellendus velit animi laboriosam nemo distinctio explicabo? Perspiciatis expedita aperiam voluptas amet odit explicabo deserunt.`
         
-    },];
+    }];
 
 const KEY = 'beerStorage';
 
 export default class DataService {
 
     static getFavorites() {
-          const jsonStr = localStorage.getItem(KEY);
-	     return new Set(JSON.parse(jsonStr ?? ''));
+        const jsonStr = localStorage.getItem(KEY);
+        if (!jsonStr) return new Set([]);
+        return new Set(JSON.parse(jsonStr ?? ''));
 	}
 
     static setFavorites(data: any) {
 		const jsonStr = JSON.stringify([...data]);
-          localStorage.setItem(KEY, jsonStr);
+            localStorage.setItem(KEY, jsonStr);
 	}
 
 	static getBeerBrands(): BeerType[] {
-          //
-          return data;
+        //
+        return data;
     }
 }

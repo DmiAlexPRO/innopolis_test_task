@@ -1,18 +1,16 @@
-import { Container } from "@mui/material";
-import Link from '@mui/material/Link';
 
 const Aboutme: React.FC = () => {
     
     return(
-        <Container className="p-grid">
+        <div className="container p-grid">
             <p>
                 Была идея, чтобы написать тут небольшое сопроводительное письмо, <br/>
                 но я так и не успел, не удалять же теперь раздел) На всякий случай <br/>
-                оставлю тут ссылку на <Link href='https://career.habr.com/dmialexpro'>резюме</Link>.
+                оставлю тут ссылку на <a href='https://career.habr.com/dmialexpro'>резюме</a>.
             </p>
             
             
-        </Container>
+        </div>
     );
 }
 

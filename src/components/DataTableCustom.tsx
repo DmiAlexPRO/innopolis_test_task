@@ -24,26 +24,23 @@ export const DataTableCustom: React.FC<DataCustomTablePropType> = ({tableRows}) 
     const [rows, setRows] = useState(mapRows);
     const [first, setFirst] = useState(0);
     
-    const strToBool = (str: string) => {
-        if(str === 'true')
-            return true;
-        return false;
-    }
+    const strToBool = (str: string) => str === 'true';
 
     const clickHandler = (rowData: any) => {
         
         const id = Number(rowData.currentTarget.dataset.id);
         const isFavorite = strToBool(rowData.currentTarget.dataset.isfavorite);
         
-        let obdatedFavorites = favorites;
+        let updatedFavorites = favorites;
+
         if(isFavorite){
-            obdatedFavorites.delete(id);
-            setFavorites(obdatedFavorites);
-            DataService.setFavorites(obdatedFavorites);
+            updatedFavorites.delete(id);
+            setFavorites(updatedFavorites);
+            DataService.setFavorites(updatedFavorites);
         }else{
-            obdatedFavorites.add(id);
-            setFavorites(obdatedFavorites);
-            DataService.setFavorites(obdatedFavorites);
+            updatedFavorites.add(id);
+            setFavorites(updatedFavorites);
+            DataService.setFavorites(updatedFavorites);
         }
         const updatedRows = rows.slice(0);
         updatedRows.filter((p: any) => p.id === id)[0].isFavorite = !isFavorite;

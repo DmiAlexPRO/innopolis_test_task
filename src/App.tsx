@@ -9,12 +9,13 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Layout />}>
-          <Route index element={<MainPage/>} />
-          <Route path="/aboutme" element={<Aboutme />} />
-          <Route path="/about/:id" element={<BeerPage />} />
-        </Route>
-    </Routes>
+          <Route path='/' element={<Layout />} >
+              <Route index element={<MainPage/>} />
+              <Route path="/aboutme" element={<Aboutme />} />
+              <Route path="/about/:id" element={<BeerPage />} />
+          </Route>
+
+      </Routes>
     </>
   );
 }
