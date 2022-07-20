@@ -3,10 +3,11 @@ import { Button } from 'primereact/button';
 import { Link } from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
 import { useState } from 'react';
-import DataService from '../services/DataService';
+import DataService from '../../services/DataService';
 import { Image } from 'primereact/image';
-import { BeerType } from '../types';
+import { BeerType } from '../../types';
 import {Card} from "primereact/card";
+import './style.scss';
 
 const BeerPage: React.FC = () => {
     const location = useLocation();

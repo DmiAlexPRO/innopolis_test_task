@@ -1,8 +1,8 @@
 import 'primeflex/primeflex.css';
-import { DataTableCustom } from './DataTableCustom';
-import DataService from '../services/DataService';
+import DataTableCustom  from '../../components/data-table-custom';
+import DataService from '../../services/DataService';
 import {Card} from "primereact/card";
-
+import './style.scss';
 
 const MainPage: React.FC = () => {
 

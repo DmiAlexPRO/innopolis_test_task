@@ -1,7 +1,7 @@
-import Layout from './components/Layout';
-import Aboutme from './components/Aboutme';
-import MainPage from './components/MainPage';
-import BeerPage from './components/BeerPage';
+import Layout from './containers/layout';
+import Aboutme from './pages/about-me';
+import MainPage from './pages/home';
+import BeerPage from './pages/beer';
 import {Routes, Route } from 'react-router';
 import './style/App.scss';
 
