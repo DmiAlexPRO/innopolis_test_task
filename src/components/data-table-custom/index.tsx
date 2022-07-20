@@ -3,14 +3,15 @@ import { Column } from 'primereact/column';
 import { DataTable } from 'primereact/datatable';
 import { useState } from 'react';
 import { Button } from 'primereact/button';
-import DataService from '../services/DataService';
 import { Link } from 'react-router-dom';
+import './style.scss';
+import DataService from '../../services/DataService';
 
 type DataCustomTablePropType = {
     tableRows: any[]
 };
 
-export const DataTableCustom: React.FC<DataCustomTablePropType> = ({tableRows}) => {
+const DataTableCustom: React.FC<DataCustomTablePropType> = ({tableRows}) => {
     const [favorites, setFavorites] = useState(DataService.getFavorites())
 
     const mapRows = () => {
@@ -22,7 +23,7 @@ export const DataTableCustom: React.FC<DataCustomTablePropType> = ({tableRows}) 
     }
 
     const [rows, setRows] = useState(mapRows);
-    const [first, setFirst] = useState(0);
+    const [first] = useState(0);
     
     const strToBool = (str: string) => str === 'true';
 
@@ -100,3 +101,5 @@ export const DataTableCustom: React.FC<DataCustomTablePropType> = ({tableRows}) 
     );
 
 }
+
+export default DataTableCustom;
